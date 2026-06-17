@@ -27,7 +27,7 @@ export function App() {
             <NavLink to="/" end className={navLinkClass}>
               Home
             </NavLink>
-            <NavLink to="/expenses" className={navLinkClass}>
+            <NavLink to="/expenses" end className={navLinkClass}>
               Expenses
             </NavLink>
             <NavLink to="/expenses/new" className={navLinkClass}>
