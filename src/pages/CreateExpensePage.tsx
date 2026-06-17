@@ -2,8 +2,11 @@ import {
   expenseSchema,
   type ExpenseFormValues,
 } from "@/features/expenses/expenseSchema";
+import { addExpense } from "@/features/expenses/expensesSlice";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "@/store/hooks";
 
 export function CreateExpensePage() {
   const {
@@ -15,9 +18,12 @@ export function CreateExpensePage() {
     resolver: zodResolver(expenseSchema),
   });
 
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
   const onSubmit = (data: ExpenseFormValues) => {
-    console.log(data);
-    reset();
+    dispatch(addExpense({ id: crypto.randomUUID(), ...data }));
+    navigate("/expenses");
   };
 
   const fieldClass =
