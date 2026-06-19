@@ -5,6 +5,7 @@ import { ExpenseDetailsPage } from "@/pages/ExpenseDetailsPage";
 import { ExpensesListPage } from "@/pages/ExpensesListPage";
 import { HomePage } from "@/pages/HomePage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+import { MonthsPage } from "@/pages/MonthsPage";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   [
@@ -31,7 +32,10 @@ export function App() {
               Expenses
             </NavLink>
             <NavLink to="/expenses/new" className={navLinkClass}>
-              Add
+              Add new expense
+            </NavLink>
+            <NavLink to="/months" className={navLinkClass}>
+              By month
             </NavLink>
           </nav>
         </div>
@@ -44,6 +48,7 @@ export function App() {
           <Route path="/expenses/new" element={<CreateExpensePage />} />
           <Route path="/expenses/:id" element={<ExpenseDetailsPage />} />
           <Route path="/expenses/:id/edit" element={<EditExpensePage />} />
+          <Route path="/months" element={<MonthsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
