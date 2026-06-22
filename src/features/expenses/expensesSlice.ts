@@ -1,5 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Expense } from "@/types/expense";
+import { loadExpenses } from "./expensesStorage";
 
 interface ExpensesState {
   items: Expense[];
@@ -8,7 +9,7 @@ interface ExpensesState {
 }
 
 const initialState: ExpensesState = {
-  items: [],
+  items: loadExpenses(),
   error: null,
   loading: false,
 };
