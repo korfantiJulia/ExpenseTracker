@@ -29,12 +29,15 @@ export function MonthsPage() {
         const byCategory = sumByCategory(group.expenses);
 
         return (
-          <div
+          <Link
             key={group.month}
-            className="space-y-4 rounded-xl border border-slate-200 bg-white/60 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/40"
+            to={`/months/${group.month}`}
+            className="block space-y-4 rounded-xl border border-slate-200 bg-white/60 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/40"
           >
             <div className="flex items-baseline justify-between gap-4 border-b border-slate-100 pb-3 dark:border-slate-800">
-              <h2 className="text-lg font-semibold">{formatMonth(group.month)}</h2>
+              <h2 className="text-lg font-semibold">
+                {formatMonth(group.month)}
+              </h2>
               <span className="text-lg font-bold tabular-nums text-indigo-600 dark:text-indigo-400">
                 {group.total}$
               </span>
@@ -55,7 +58,7 @@ export function MonthsPage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Link>
         );
       })}
     </div>
