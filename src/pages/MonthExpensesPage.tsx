@@ -2,6 +2,7 @@ import { useAppSelector } from "@/store/hooks";
 import { Link, useParams } from "react-router-dom";
 import { ExpenseCard } from "@/components/ExpenseCard";
 import { formatMonth } from "@/utils/formatMonth";
+import { CategoryPieChart } from "@/components/CategoryPieChart";
 
 export function MonthExpensesPage() {
   const { month } = useParams();
@@ -41,6 +42,11 @@ export function MonthExpensesPage() {
       <h1 className="text-2xl font-bold tracking-tight">
         {formatMonth(month)}
       </h1>
+
+      <div className="rounded-xl border border-slate-200 bg-white/60 p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900/40">
+        <CategoryPieChart expenses={monthExpenses} />
+      </div>
+
       <ul className="space-y-3">
         {monthExpenses.map((expense) => (
           <li key={expense.id}>
