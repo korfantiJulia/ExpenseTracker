@@ -8,6 +8,8 @@ export function ExpensesListPage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [sortBy, setSortBy] = useState("date-desc");
+  const PAGE_SIZE = 7;
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   if (expenses.length === 0) {
     return (
@@ -38,6 +40,8 @@ export function ExpensesListPage() {
     if (sortBy === "amount-asc") return a.amount - b.amount;
     return 0;
   });
+
+  const paginatedExpenses = sortedExpenses.slice(0, visibleCount);
 
   return (
     <div className="space-y-4">
@@ -87,13 +91,28 @@ export function ExpensesListPage() {
         </select>
       </div>
 
-      <ul className="space-y-3">
-        {sortedExpenses.map((expense) => (
-          <li key={expense.id}>
-            <ExpenseCard expense={expense} />
-          </li>
-        ))}
-      </ul>
+      {sortedExpenses.length === 0 ? (
+        <p className="py-12 text-center text-slate-500 dark:text-slate-400">
+          Nothing found. Try changing search or filters.
+        </p>
+      ) : (
+        <ul className="space-y-3">
+          {paginatedExpenses.map((expense) => (
+            <li key={expense.id}>
+              <ExpenseCard expense={expense} />
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {visibleCount < sortedExpenses.length && (
+        <button
+          onClick={() => setVisibleCount(visibleCount + PAGE_SIZE)}
+          className="mx-auto block rounded-md border border-slate-400 px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-800"
+        >
+          Load more
+        </button>
+      )}
     </div>
   );
 }
