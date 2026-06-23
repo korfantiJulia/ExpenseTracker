@@ -22,7 +22,7 @@ export function CategoryPieChart({ expenses }: CategoryPieChartProps) {
   }
 
   const COLORS = [
-    "#6366f1",
+    "#475569",
     "#06b6d4",
     "#f59e0b",
     "#ef4444",

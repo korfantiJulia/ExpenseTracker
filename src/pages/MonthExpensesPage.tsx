@@ -22,7 +22,7 @@ export function MonthExpensesPage() {
         </p>
         <Link
           to="/expenses/new"
-          className="mt-3 inline-block text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+          className="mt-3 inline-block text-sm font-medium text-slate-800 hover:underline dark:text-slate-300"
         >
           Add your first expense
         </Link>
@@ -34,7 +34,7 @@ export function MonthExpensesPage() {
     <div className="space-y-4">
       <Link
         to="/months"
-        className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+        className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 transition-colors hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-300"
       >
         ← Back to month list
       </Link>

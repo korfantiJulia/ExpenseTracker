@@ -9,7 +9,7 @@ export function ExpenseCard({ expense }: ExpenseCardProps) {
   return (
     <Link
       to={`/expenses/${expense.id}`}
-      className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white/60 px-4 py-3 shadow-sm transition-colors hover:border-indigo-300 hover:bg-white dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-indigo-700 dark:hover:bg-slate-900"
+      className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white/60 px-4 py-3 shadow-sm transition-colors hover:border-slate-400 hover:bg-white dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-600 dark:hover:bg-slate-900"
     >
       <div className="min-w-0">
         <p className="truncate font-medium">{expense.title}</p>

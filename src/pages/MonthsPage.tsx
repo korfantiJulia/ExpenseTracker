@@ -14,7 +14,7 @@ export function MonthsPage() {
         <p className="text-slate-500 dark:text-slate-400">No expenses yet</p>
         <Link
           to="/expenses/new"
-          className="mt-3 inline-block text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+          className="mt-3 inline-block text-sm font-medium text-slate-800 hover:underline dark:text-slate-300"
         >
           Add your first expense
         </Link>
@@ -38,7 +38,7 @@ export function MonthsPage() {
               <h2 className="text-lg font-semibold">
                 {formatMonth(group.month)}
               </h2>
-              <span className="text-lg font-bold tabular-nums text-indigo-600 dark:text-indigo-400">
+              <span className="text-lg font-bold tabular-nums text-slate-800 dark:text-slate-300">
                 {group.total}$
               </span>
             </div>

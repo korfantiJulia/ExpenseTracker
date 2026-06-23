@@ -3,6 +3,10 @@
 /* Включаем тёмную тему по классу .dark на <html> (Tailwind v4 custom variant) */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* hover срабатывает на реальное наведение всегда (по умолчанию Tailwind v4
+   прячет hover за @media (hover: hover), из-за чего на тач-устройствах он не работает) */
+@custom-variant hover (&:hover);
+
 :root {
   color-scheme: light dark;
 }
@@ -19,4 +23,9 @@ body {
 
 .dark body {
   @apply bg-slate-950 text-slate-100;
+}
+
+/* Tailwind v4 убрал cursor:pointer у кнопок по умолчанию — возвращаем */
+button:not(:disabled) {
+  cursor: pointer;
 }

@@ -26,7 +26,7 @@ export function ExpenseForm({
   });
 
   const fieldClass =
-    "w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 dark:border-slate-700 dark:bg-slate-900 dark:placeholder:text-slate-500";
+    "w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-slate-500 focus:ring-2 focus:ring-slate-500/30 dark:border-slate-700 dark:bg-slate-900 dark:placeholder:text-slate-500";
   const labelClass = "text-sm font-medium text-slate-700 dark:text-slate-300";
   const errorClass = "mt-1 text-sm text-red-500";
 
@@ -96,7 +96,7 @@ export function ExpenseForm({
 
       <button
         type="submit"
-        className="w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-700"
+        className="w-full rounded-md bg-slate-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700"
       >
         {submitLabel}
       </button>

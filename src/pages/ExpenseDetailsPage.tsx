@@ -26,7 +26,7 @@ export function ExpenseDetailsPage() {
     <div className="space-y-6">
       <Link
         to="/expenses"
-        className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+        className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 transition-colors hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-300"
       >
         ← Back to list
       </Link>
@@ -34,7 +34,7 @@ export function ExpenseDetailsPage() {
       <div className="space-y-5 rounded-xl border border-slate-200 bg-white/60 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/40">
         <div className="flex items-start justify-between gap-4">
           <h1 className="text-2xl font-bold tracking-tight">{expense.title}</h1>
-          <span className="shrink-0 text-2xl font-bold tabular-nums text-indigo-600 dark:text-indigo-400">
+          <span className="shrink-0 text-2xl font-bold tabular-nums text-slate-800 dark:text-slate-300">
             {expense.amount}$
           </span>
         </div>
@@ -60,7 +60,7 @@ export function ExpenseDetailsPage() {
       <div className="flex gap-3">
         <Link
           to={`/expenses/${expense.id}/edit`}
-          className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-700"
+          className="rounded-md bg-slate-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700"
         >
           Edit
         </Link>
